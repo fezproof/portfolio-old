@@ -1,6 +1,6 @@
 describe("Sapper template app", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/portfolio");
   });
 
   it("has the correct <h1>", () => {
