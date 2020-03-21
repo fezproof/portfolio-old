@@ -4,47 +4,57 @@
 
 <style>
   nav {
-    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
+    background-color: var(--bg-secondary);
     font-weight: 300;
-    padding: 0 1em;
+    display: flex;
+    top: 0;
+    height: 100vh;
+    width: 5rem;
+    position: fixed;
+    transition: var(--transition-speed);
+    z-index: 10;
+  }
+
+  nav:hover {
+    width: 15rem;
   }
 
   ul {
     margin: 0;
     padding: 0;
-  }
-
-  /* clearfix */
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
+    width: 100%;
   }
 
   li {
     display: block;
-    float: left;
   }
 
   [aria-current] {
-    position: relative;
-    display: inline-block;
-  }
-
-  [aria-current]::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: rgb(255, 62, 0);
-    display: block;
-    bottom: -1px;
+    border-color: var(--color-secondary-light);
   }
 
   a {
     text-decoration: none;
-    padding: 1em 0.5em;
     display: block;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: var(--transition-speed);
+    border: 0.2rem solid transparent;
+    border-radius: 0.3rem;
+  }
+
+  a:hover {
+    border-color: var(--color-secondary-main);
+  }
+
+  a span {
+    padding: 0.5rem;
   }
 </style>
 
@@ -55,7 +65,7 @@
         rel="prefetch"
         aria-current={segment === undefined ? 'page' : undefined}
         href=".">
-        home
+        <span>home</span>
       </a>
     </li>
     <li>
@@ -63,7 +73,7 @@
         rel="prefetch"
         aria-current={segment === 'about' ? 'page' : undefined}
         href="about">
-        about
+        <span>about</span>
       </a>
     </li>
   </ul>
