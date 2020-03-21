@@ -1,5 +1,6 @@
 <script>
   import Nav from "../components/Nav.svelte";
+  import SlotTransition from "../components/SlotTransition.svelte";
 
   export let segment;
 </script>
@@ -17,5 +18,7 @@
 <Nav {segment} />
 
 <main>
-  <slot />
+  <SlotTransition bind:changer={segment}>
+    <slot />
+  </SlotTransition>
 </main>
