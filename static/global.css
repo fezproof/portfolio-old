@@ -1,36 +1,47 @@
+:root {
+  --text-primary: #fbf5f3;
+  --text-secondary: #f0f0f0;
+
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1d1d1d;
+
+  --color-primary-main: #e28413;
+  --color-primary-light: #e79a3d;
+  --color-primary-dark: #b96d10;
+
+  --color-secondary-main: #23967f;
+  --color-secondary-light: #4ba996;
+  --color-secondary-dark: #1d7b68;
+
+  --transition-speed: 300ms;
+
+  font-family: "Open Sans", sans-serif;
+}
+
 body {
-	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #333;
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5em 0;
-	font-weight: 400;
-	line-height: 1.2;
+body * {
+  box-sizing: border-box;
 }
 
-h1 {
-	font-size: 2em;
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-primary-main);
 }
 
 a {
-	color: inherit;
-}
-
-code {
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	color: #555;
-	background-color: #f0f0f0;
-	padding: 0.2em 0.4em;
-	border-radius: 2px;
-}
-
-@media (min-width: 400px) {
-	body {
-		font-size: 16px;
-	}
+  color: inherit;
 }
