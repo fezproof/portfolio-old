@@ -3,7 +3,7 @@
   "theme_color": "#18f0f0",
   "name": "Ben Chidlow Portfolio",
   "short_name": "BC Portfolio",
-  "display": "minimal-ui",
+  "display": "standalone",
   "start_url": "/portfolio/",
   "icons": [
     {

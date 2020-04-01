@@ -15,6 +15,8 @@
     position: fixed;
     transition: var(--transition-speed);
     z-index: 10;
+
+    box-shadow: 0 0 2rem var(--bg-primary);
   }
 
   ul {
@@ -30,7 +32,7 @@
     position: relative;
   }
 
-  ul > div.spacer {
+  ul > li.spacer {
     width: 8rem;
   }
 
@@ -44,11 +46,17 @@
     position: absolute;
     bottom: -2rem;
     top: auto;
-    border: 0.1rem solid var(--color-primary-main);
     width: 5rem;
     height: 5rem;
     transform: rotate(45deg);
     background-color: var(--bg-primary);
+    border: 0.1rem solid var(--color-primary-main);
+    box-shadow: 0 0 0.5rem var(--color-primary-main);
+  }
+
+  li.portal:hover,
+  li.portal:focus {
+    animation: flicker-primary 3s linear infinite;
   }
 
   li.portal > a {
@@ -56,7 +64,8 @@
   }
 
   [aria-current] {
-    border-color: var(--color-secondary-light);
+    border: 0.1rem solid var(--color-secondary-main);
+    box-shadow: 0 0 0.5rem var(--color-secondary-main);
   }
 
   a {
@@ -72,14 +81,12 @@
     min-width: 5rem;
 
     transition: var(--transition-speed);
-    border: none;
-
-    border-top: 0.2rem solid transparent;
+    border: 0.1rem solid transparent;
   }
 
   a:hover,
   a:focus {
-    border-color: var(--color-secondary-dark);
+    animation: flicker-secondary 3s linear infinite;
     outline: none;
   }
 
@@ -93,18 +100,14 @@
       top: auto;
     }
 
-    li {
-      margin: 0;
-    }
-
     li.portal {
       top: -2rem;
       bottom: auto;
     }
-
-    a {
-      border: none;
-      border-bottom: 0.2rem solid transparent;
+  }
+  @media only screen and (max-width: 600px) {
+    li {
+      margin: 0;
     }
   }
 </style>
@@ -139,7 +142,7 @@
       </a>
     </li>
 
-    <div class="spacer" />
+    <li class="spacer" />
 
     <li>
       <a
