@@ -7,16 +7,14 @@
     background-color: var(--bg-primary);
     font-weight: 300;
     top: 0;
-    height: 100vh;
-    width: 5rem;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5rem;
     position: fixed;
     transition: var(--transition-speed);
     z-index: 10;
-  }
-
-  nav:hover {
-    width: 15rem;
-    background-color: var(--bg-secondary);
   }
 
   ul {
@@ -25,16 +23,36 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  ul > div.spacer {
+    width: 8rem;
   }
 
   li {
     display: block;
+    margin: 0 1rem;
   }
 
-  .last {
-    margin-top: auto;
+  li.portal {
+    margin-left: auto;
+    position: absolute;
+    bottom: -2rem;
+    top: auto;
+    border: 0.1rem solid var(--color-primary-main);
+    width: 5rem;
+    height: 5rem;
+    transform: rotate(45deg);
+    background-color: var(--bg-primary);
+  }
+
+  li.portal > a {
+    transform: rotate(-45deg);
   }
 
   [aria-current] {
@@ -51,39 +69,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 5rem;
 
     transition: var(--transition-speed);
-    border-right: 0.2rem solid transparent;
-    border-radius: -0.2rem;
+    border: none;
+
+    border-top: 0.2rem solid transparent;
   }
 
-  a:hover {
+  a:hover,
+  a:focus {
     border-color: var(--color-secondary-dark);
+    outline: none;
   }
 
   a span {
     padding: 0.5rem;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 960px) {
     nav {
       bottom: 0;
       top: auto;
-      left: 0;
-      right: 0;
-      height: 5rem;
-      width: 100%;
     }
 
-    ul {
-      flex-direction: row;
+    li {
+      margin: 0;
+    }
+
+    li.portal {
+      top: -2rem;
+      bottom: auto;
+    }
+
+    a {
+      border: none;
+      border-bottom: 0.2rem solid transparent;
     }
   }
 </style>
 
 <nav>
   <ul>
-    <li>
+    <!-- Main link at top for good tab indexing -->
+    <li class="portal">
       <a
         rel="prefetch"
         aria-current={segment === undefined ? 'page' : undefined}
@@ -91,26 +120,41 @@
         <span>home</span>
       </a>
     </li>
+
+    <!-- Secondary links for page navigation -->
     <li>
       <a
         rel="prefetch"
-        aria-current={segment === 'about' ? 'page' : undefined}
-        href="about">
-        <span>about</span>
+        aria-current={segment === 'projects' ? 'page' : undefined}
+        href="projects">
+        <span>projects</span>
       </a>
     </li>
     <li>
       <a
         rel="prefetch"
-        aria-current={segment === 'skills' ? 'page' : undefined}
-        href="skills">
-        <span>skills</span>
+        aria-current={segment === 'blog' ? 'page' : undefined}
+        href="blog">
+        <span>blog</span>
       </a>
     </li>
 
-    <li class="last">
-      <a aria-current={segment === 'portal' ? 'page' : undefined} href="portal">
-        <span>portal</span>
+    <div class="spacer" />
+
+    <li>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'contact' ? 'page' : undefined}
+        href="contact">
+        <span>contact</span>
+      </a>
+    </li>
+    <li>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'dnd' ? 'page' : undefined}
+        href="dnd">
+        <span>dnd</span>
       </a>
     </li>
   </ul>
