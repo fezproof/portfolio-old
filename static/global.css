@@ -1,5 +1,5 @@
 :root {
-  --text-primary: #fbf5f3;
+  --text-primary: #f3f3fb;
   --text-secondary: #f0f0f0;
 
   --bg-primary: #0f0f0f;
@@ -31,7 +31,7 @@ body * {
 }
 
 body::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.4rem;
 }
 
 body::-webkit-scrollbar-track {
