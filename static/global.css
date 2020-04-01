@@ -5,13 +5,13 @@
   --bg-primary: #0f0f0f;
   --bg-secondary: #1d1d1d;
 
-  --color-primary-main: #e28413;
-  --color-primary-light: #e79a3d;
-  --color-primary-dark: #b96d10;
+  --color-primary-main: #18f0f0;
+  --color-primary-light: #72ffff;
+  --color-primary-dark: #00bdbe;
 
-  --color-secondary-main: #23967f;
-  --color-secondary-light: #4ba996;
-  --color-secondary-dark: #1d7b68;
+  --color-secondary-main: #ff1860;
+  --color-secondary-light: #ff628d;
+  --color-secondary-dark: #c50037;
 
   --transition-speed: 300ms;
 
