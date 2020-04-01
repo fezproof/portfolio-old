@@ -1,7 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
 
-  export let changer;
+  export let changer = undefined;
   export let duration = 200;
   export let transition = fly;
 

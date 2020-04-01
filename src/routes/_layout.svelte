@@ -1,4 +1,5 @@
 <script>
+  import { blur } from "svelte/transition";
   import Nav from "../components/Nav.svelte";
   import SlotTransition from "../components/SlotTransition.svelte";
 
@@ -24,7 +25,7 @@
 <Nav {segment} />
 
 <main>
-  <SlotTransition bind:changer={segment}>
+  <SlotTransition bind:changer={segment} transition={blur}>
     <slot />
   </SlotTransition>
 </main>
