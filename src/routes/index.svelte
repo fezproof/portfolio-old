@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <svelte:head>
   <title>Home</title>
 </svelte:head>
