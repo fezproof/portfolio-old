@@ -32,7 +32,7 @@
     position: relative;
   }
 
-  ul > div.spacer {
+  ul > li.spacer {
     width: 8rem;
   }
 
@@ -100,13 +100,14 @@
       top: auto;
     }
 
-    li {
-      margin: 0;
-    }
-
     li.portal {
       top: -2rem;
       bottom: auto;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    li {
+      margin: 0;
     }
   }
 </style>
@@ -141,7 +142,7 @@
       </a>
     </li>
 
-    <div class="spacer" />
+    <li class="spacer" />
 
     <li>
       <a
