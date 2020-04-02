@@ -6,6 +6,8 @@ const pkg = require("./package.json");
 const mode = process.env.NODE_ENV || "production";
 const dev = mode === "development";
 
+const clientEnv = require("./scripts/env")(mode);
+
 const alias = { svelte: path.resolve("node_modules", "svelte") };
 const extensions = [".mjs", ".js", ".json", ".svelte", ".html"];
 const mainFields = ["svelte", "module", "browser", "main"];
@@ -27,6 +29,10 @@ module.exports = {
               hotReload: false // pending https://github.com/sveltejs/svelte/issues/2377
             }
           }
+        },
+        {
+          test: /\.js?$/,
+          loader: `transform-loader?loose-envify`
         }
       ]
     },
@@ -36,10 +42,10 @@ module.exports = {
       // dev && new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         "process.browser": true,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        ...clientEnv
       })
     ].filter(Boolean),
-    devtool: dev && "inline-source-map"
+    devtool: dev ? "inline-source-map" : undefined
   },
 
   server: {
