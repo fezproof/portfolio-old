@@ -72,6 +72,13 @@
   }
 </style>
 
+<svelte:head>
+  <meta
+    name="description"
+    content="My name is Ben Chidlow, and I am a developer that likes to be where
+    the future is, not where is it was" />
+</svelte:head>
+
 <Nav {segment} />
 
 <main>
