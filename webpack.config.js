@@ -12,6 +12,14 @@ const alias = { svelte: path.resolve("node_modules", "svelte") };
 const extensions = [".mjs", ".js", ".json", ".svelte", ".html"];
 const mainFields = ["svelte", "module", "browser", "main"];
 
+const fileLoader = {
+  loader: require.resolve("file-loader"),
+  test: /\.(png|svg|jpeg|jpg|gif)$/,
+  options: {
+    name: "static/media/[name].[hash:8].[ext]"
+  }
+};
+
 module.exports = {
   client: {
     entry: config.client.entry(),
@@ -30,6 +38,7 @@ module.exports = {
             }
           }
         },
+        fileLoader,
         {
           test: /\.js?$/,
           loader: `transform-loader?loose-envify`
@@ -66,7 +75,8 @@ module.exports = {
               dev
             }
           }
-        }
+        },
+        fileLoader
       ]
     },
     mode,
