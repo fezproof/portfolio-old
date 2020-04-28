@@ -59,15 +59,14 @@
 
   main {
     position: relative;
-    max-width: 56rem;
     padding: 2rem;
-    margin: 8rem auto 0 auto;
+    margin: 6rem auto 0 auto;
     box-sizing: border-box;
   }
 
   @media only screen and (max-width: 960px) {
     main {
-      margin: 0 auto 8rem auto;
+      margin: 0 auto 6rem auto;
     }
   }
 </style>
@@ -81,8 +80,8 @@
 
 <Nav {segment} />
 
-<main>
-  <SlotTransition bind:changer={segment} transition={blur}>
+<SlotTransition bind:changer={segment} transition={blur}>
+  <main>
     <slot />
-  </SlotTransition>
-</main>
+  </main>
+</SlotTransition>

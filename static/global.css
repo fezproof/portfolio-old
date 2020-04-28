@@ -3,7 +3,7 @@
   --text-secondary: #f0f0f0;
 
   --bg-primary: #0f0f0f;
-  --bg-secondary: #1d1d1d;
+  --bg-secondary: #211629;
 
   --color-primary-main: #18f0f0;
   --color-primary-light: #72ffff;
@@ -23,7 +23,12 @@ body {
   padding: 0;
 
   background-color: var(--bg-primary);
+
   color: var(--text-primary);
+}
+
+::selection {
+  background: var(--color-secondary-light);
 }
 
 * {

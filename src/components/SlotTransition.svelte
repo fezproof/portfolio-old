@@ -14,6 +14,13 @@
   $: change(changer);
 </script>
 
+<style>
+  div {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
 {#if swap}
   <div
     in:transition={{ duration, delay: duration, y: -100 }}
