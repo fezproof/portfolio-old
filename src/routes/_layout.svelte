@@ -59,23 +59,29 @@
 
   main {
     position: relative;
-    max-width: 56rem;
     padding: 2rem;
-    margin: 8rem auto 0 auto;
+    margin: 6rem auto 0 auto;
     box-sizing: border-box;
   }
 
   @media only screen and (max-width: 960px) {
     main {
-      margin: 0 auto 8rem auto;
+      margin: 0 auto 6rem auto;
     }
   }
 </style>
 
+<svelte:head>
+  <meta
+    name="description"
+    content="My name is Ben Chidlow, and I am a developer that likes to be where
+    the future is, not where is it was" />
+</svelte:head>
+
 <Nav {segment} />
 
-<main>
-  <SlotTransition bind:changer={segment} transition={blur}>
+<SlotTransition bind:changer={segment} transition={blur}>
+  <main>
     <slot />
-  </SlotTransition>
-</main>
+  </main>
+</SlotTransition>
